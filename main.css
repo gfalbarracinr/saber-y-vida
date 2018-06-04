@@ -1,0 +1,194 @@
+/* fuentes */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700|Source+Sans+Pro:300i');
+/* all */
+*{
+    margin: 0;
+    padding: 0;
+    border: 0; 
+}
+/* contenedor se inicia el flex */
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.video1{
+    background: url(images/marcovideo1.png) no-repeat;
+    width: 800px;
+    height: 600px;
+}
+.video2{
+    background: url(videos/marcovideo2.png) no-repeat;
+    width: 800px;
+    height: 600px;
+}
+.video3{
+    background: url(videos/marcovideo3.png) no-repeat;
+    width: 800px;
+    height: 600px;
+}
+.frame-video1{
+    position: absolute;
+    left: 38px;
+    top: 32px;
+}
+
+.frame-video2{
+    position: absolute;
+    left: 95px;
+    top: 45px;
+}
+/* tags */
+a{
+    text-decoration: none;
+}
+/* imagenes como la del titulo */
+.img-medium{
+    width: 450px;
+    max-width: 100%; 
+    max-height: 450px; 
+    min-height: 450px; 
+    min-width: 450px;
+}
+.img-1{
+    margin-top: 10%;
+    width: 450px;
+    max-width: 100%;
+    max-height: 100%; 
+    height: 450px; 
+}
+.img-wide{
+    width: 100%;
+    max-height: 250px;
+    max-width: 800px;
+    margin-bottom: 5%;
+}
+/* barras negras del subtitulo */
+hr {
+    height: 8px;
+    flex-basis: 30%;
+    background-color: black;
+    border: 1px solid black;
+    margin: 1em 0;
+    padding: 0;
+}
+.deep-p{
+    margin-top: 5%;
+}
+/* para centrar las imagenes tanto del index como de creditos */
+.img{
+    justify-content: center;
+}
+/* main flex */
+.navbar{
+    justify-content: flex-end;
+    align-content: space-between;
+}
+
+/* menu */
+.menu-bar{ 
+    list-style-type: none;
+    flex: 2;
+    width: 200px;
+    height: 50px;
+}
+/* flex hijos */
+.menu-item{
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+}
+/* colores de paginas */
+.home{
+    background-color: #ffd503;
+}
+.credits{
+    background-color: #e3b522;
+}
+.a-nav-item{
+    align-self: center;
+    color: black;
+}
+
+/* title */
+.title{
+    justify-content: center;
+}
+
+.subtitle{
+    justify-content: center;
+    
+}
+/* añadirle el sombreado al subtitulo */
+.div-subtitle{
+    justify-content: center;
+    flex-basis: 68%;
+    background-color: #e3b522;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+    -webkit-box-shadow: 9px 10px 14px -2px rgba(0,0,0,0.31);
+    -moz-box-shadow: 9px 10px 14px -2px rgba(0,0,0,0.31);
+    box-shadow: 9px 10px 14px -2px rgba(0,0,0,0.31);
+}
+/* texto subtitulo */
+/* subtitulo */
+.h2-subtitle{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    align-content: space-between;
+}
+/* texto */
+.text-subtitle{
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-top: 3%;
+    margin-left: 37%;
+    margin-right: 37%;
+    text-align: center;
+    justify-content: center;
+}
+/*game */
+/* centrar instrucciones */
+.instruction{
+    justify-content: center;
+}
+/* margen a los lados */
+.title-instruction{
+    flex-basis: 68%;
+}
+/* footer */
+
+.footer{
+    justify-content: center;
+    background-color: #282829;
+    margin-top: 2%;
+}
+.p-footer{
+    font-family: 'Source Sans Pro', sans-serif;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    color: white;
+    text-align: center;
+}
+/* franja amarilla */
+.yellow-footer{
+    background-color: #e3b522;
+    margin-top: 0.5%;
+    height: 60px;
+}
+/* centrar el juego */
+.phaser-game{
+    justify-content: center;
+}
+
+#saludo{
+    display: none;
+}
+
+/* responsive */
+/* Media queries*/
+@media (max-width: 700px){
+    .text-subtitle{
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}
