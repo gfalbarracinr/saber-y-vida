@@ -20,14 +20,16 @@ function preload() {
     //flechas de desplazamiento
     game.load.image('right', 'images/flecha-der.png');
     game.load.image('left', 'images/flecha-izq.png');
+    game.load.image('rightGris', 'images/flecha-der-gris.png');
+    game.load.image('leftGris', 'images/flecha-izq-gris.png');
     //botones de la galeria ver, link, video, infografia
     game.load.spritesheet('info', 'images/info.png', 560, 389);
-    game.load.spritesheet('ver', 'images/ver.png', 100,100);
-    game.load.spritesheet('facebook', 'images/facebook.png', 100,100);
-    game.load.spritesheet('close', 'images/close.png', 100,100);
-    game.load.spritesheet('desplegar', 'images/desplegar.png', 100,100);
-    game.load.spritesheet('play', 'images/play.png', 100,100);
-    game.load.spritesheet('play-big', 'images/boton-big.png',100,100);
+    game.load.spritesheet('ver', 'images/ver.png', 100, 100);
+    game.load.spritesheet('facebook', 'images/facebook.png', 100, 100);
+    game.load.spritesheet('close', 'images/close.png', 100, 100);
+    game.load.spritesheet('desplegar', 'images/desplegar.png', 210, 210);
+    game.load.spritesheet('play', 'images/play.png', 100, 100);
+    game.load.spritesheet('play-big', 'images/boton-big.png', 100, 100);
     
 }
 //tamaño del juego y numero de saltos al pulsar flechas
@@ -136,27 +138,35 @@ function create() {
 
     
     //carga flechas de desplazamiento
-    rightArrow = game.add.image(1050, 150, 'right');   
-    leftArrow = game.add.image(0, 150, 'left');
-
+    rightArrow = game.add.image(1050, 150, 'right');
+    leftArrow = game.add.image(50, 150, 'left');
+    leftArrow.tint = 0x8e9190;
     //Añade los botones
 
-    info1 = game.add.sprite(1100, 183, 'info');
-    info2 = game.add.sprite(4800, 295, 'facebook');
+    info1 = game.add.sprite(1096, 181, 'info');
+    info1.scale.setTo(1.2,1.2);
+    info2 = game.add.sprite(4797, 290, 'facebook');
+    info2.scale.setTo(1.2,1.2);
 
-    verInfo1 = game.add.sprite(1100,340,'ver');
-    verInfo2 = game.add.sprite(1974, 315, 'ver');
-    verInfo3 = game.add.sprite(2840, 340, 'ver');
+
+    verInfo1 = game.add.sprite(1100, 345,'ver');
+    verInfo2 = game.add.sprite(1974, 313, 'ver');
+    verInfo3 = game.add.sprite(2840, 335, 'ver');
     verInfo4 = game.add.sprite(4750, 300, 'ver');
 
-    verfoto1 = game.add.sprite(3215,340, 'desplegar');
-    verfoto2 = game.add.sprite(3445, 380, 'desplegar');
-    verfoto3 = game.add.sprite(4200, 360, 'desplegar');
-    verfoto4 = game.add.sprite(4410, 340, 'desplegar');
+    verfoto1 = game.add.sprite(3210, 335, 'desplegar');
+    verfoto1.scale.setTo(1.2,1.2);
+    verfoto2 = game.add.sprite(3437, 375, 'desplegar');
+    verfoto2.scale.setTo(1.2,1.2);
+    verfoto3 = game.add.sprite(4194, 355, 'desplegar');
+    verfoto3.scale.setTo(1.2,1.2);
+    verfoto4 = game.add.sprite(4406, 335, 'desplegar');
+    verfoto4.scale.setTo(1.2,1.2);
     
-    vervideo1 = game.add.sprite(1520, 120, 'play-big');
-    vervideo2 = game.add.sprite(2640, 280, 'play');
-    vervideo3 = game.add.sprite(3800, 30, 'play-big');
+    vervideo1 = game.add.sprite(1510, 125, 'play-big');
+    vervideo2 = game.add.sprite(2640, 282, 'play');
+    vervideo3 = game.add.sprite(3805, 30, 'play-big');
+    vervideo3.scale.setTo(0.87,0.87);
 
     //habilita el input en todos los botones
     rightArrow.inputEnabled = true;
@@ -251,7 +261,6 @@ function create() {
     
     //Se añaden al grupo para tener las flechas al frente siempre
 
-
     group.add(rightArrow);
     group.add(leftArrow);
 
@@ -291,6 +300,8 @@ function create() {
     group.add(foto3);
     group.add(foto4);
 
+    group.moveDown(vervideo1);
+    group.moveDown(background);
 
     //coloca  a las flechas en el frente
     group.moveUp(leftArrow);
@@ -304,14 +315,17 @@ function listener() {
     group.moveUp(leftArrow);
     group.moveUp(rightArrow);
     //si llega al final no haga nada
-    if (rightArrow.position.x >= WIDTH_FINAL - MOVING){
+    if (rightArrow.position.x >= WIDTH_FINAL - MOVING - 100){
+        rightArrow.tint = 0x8e9190;
         return;
     }
+    leftArrow.tint = 0xffffff;
+    rightArrow.tint = 0xffffff;
     //Si es la primera vez salta mas grande 
     if (firstTime){
-        player.position.x += 600;
-        rightArrow.position.x += 450;
-        leftArrow.position.x += 450;
+        player.position.x += 800;
+        rightArrow.position.x += 650;
+        leftArrow.position.x += 600;
         firstTime = false;
     }else{
         //salto normal
@@ -325,11 +339,12 @@ function listener() {
 //Al hacer click en la flecha izquierda
 function leftClick (){
     //si esta al comienzo de la imagen no haga nada
-    if (leftArrow.position.x <= WIDTH_START + MOVING){
+    if (leftArrow.position.x <= WIDTH_START + MOVING + 100){
+        leftArrow.tint = 0x8e9190;
         return;
     }
-
-
+    rightArrow.tint = 0xffffff;
+    leftArrow.tint = 0xffffff;
     //coloca  a las flechas en el frente
     group.moveUp(leftArrow);
     group.moveUp(rightArrow);
@@ -375,11 +390,11 @@ function removeGroup() {
 
 //cuando hace click en el primer link, se abre una nueva ventana con los parametros listados
 function click() {
-    window.open('https://aulavivaparalapaz.wordpress.com', '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');
+    window.open('https://aulavivaparalapaz.wordpress.com', '_blank', 'location=yes,scrollbars=yes,status=yes');
 }
 //cuando hace click en el segundo link, se abre una nueva ventana con los parametros listados
 function click2() {
-    window.open('https://www.facebook.com/groups/1261733320537963', '_blank', 'location=yes,height=570,width=520,scrollbars=yes,status=yes');
+    window.open('https://www.facebook.com/groups/1261733320537963', '_blank', 'location=yes,scrollbars=yes,status=yes');
 }
 
 //para cambiar la visibilidad de los argumentos de la función
