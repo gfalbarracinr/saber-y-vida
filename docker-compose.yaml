@@ -34,8 +34,8 @@ services:
     volumes:
       - ./:/usr/share/nginx/html:ro
     environment:
-      - VIRTUAL_HOST = demo2.ayni.ml, www.demo2.ayni.ml
-      - LETSENCRYPT_HOST = demo2.ayni.ml, www.demo2.ayni.ml
+      - VIRTUAL_HOST = demo2.ayni.ml
+      - LETSENCRYPT_HOST = demo2.ayni.ml
       - LETSENCRYPT_EMAIL=cahupa99@gmail.com
 volumes: 
   certs:
