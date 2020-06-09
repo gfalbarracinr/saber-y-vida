@@ -170,32 +170,57 @@ function create() {
 
     //habilita el input en todos los botones
     rightArrow.inputEnabled = true;
+    rightArrow.input.useHandCursor = true;
+
     leftArrow.inputEnabled = true;
+    leftArrow.input.useHandCursor = true;
 
     info1.inputEnabled = true;
+    info1.input.useHandCursor = true;
+    
     info2.inputEnabled = true;
+    info2.input.useHandCursor = true;
 
     verInfo1.inputEnabled = true;
+    verInfo1.input.useHandCursor = true;
     verInfo2.inputEnabled = true;
+    verInfo2.input.useHandCursor = true;
     verInfo3.inputEnabled = true;
+    verInfo3.input.useHandCursor = true;
     verInfo4.inputEnabled = true;
+    verInfo4.input.useHandCursor = true;
     verfoto1.inputEnabled = true;
+    verfoto1.input.useHandCursor = true;
     verfoto2.inputEnabled = true;
+    verfoto2.input.useHandCursor = true;
     verfoto3.inputEnabled = true;
+    verfoto3.input.useHandCursor = true;
     verfoto4.inputEnabled = true;
+    verfoto4.input.useHandCursor = true;
 
     vervideo1.inputEnabled = true;
+    vervideo1.input.useHandCursor = true;
     vervideo2.inputEnabled = true;
+    vervideo2.input.useHandCursor = true;
     vervideo3.inputEnabled = true;
+    vervideo3.input.useHandCursor = true;
 
     closeButton.inputEnabled = true;
+    closeButton.input.useHandCursor = true;
     closeButton2.inputEnabled = true;
+    closeButton2.input.useHandCursor = true;
     closeButton3.inputEnabled = true;
+    closeButton3.input.useHandCursor = true;
     closeButton4.inputEnabled = true;
+    closeButton4.input.useHandCursor = true;
     closeButton5.inputEnabled = true;
+    closeButton5.input.useHandCursor = true;
     closeButton6.inputEnabled = true;
+    closeButton6.input.useHandCursor = true;
     closeButton7.inputEnabled = true;
+    closeButton7.input.useHandCursor = true;
     closeButton8.inputEnabled = true;
+    closeButton8.input.useHandCursor = true;
 
 
 
